@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jon Fasoli - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.4;
+            color: #000;
+            background: #fff;
+            font-size: 12px;
+        }
+
+        .header {
+            background: #2C3E50;
+            color: white;
+            padding: 30px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .header-left h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .header-left h2 {
+            font-size: 18px;
+            font-weight: normal;
+            margin-left: 20px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .contact-item {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .contact-item::before {
+            content: "•";
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        .main-content {
+            display: flex;
+            padding: 40px;
+            gap: 40px;
+        }
+
+        .left-column {
+            flex: 2;
+        }
+
+        .right-column {
+            flex: 1;
+        }
+
+        .section-title {
+            color: #2C3E50;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #2C3E50;
+            padding-bottom: 5px;
+        }
+
+        .job {
+            margin-bottom: 25px;
+        }
+
+        .job-header {
+            margin-bottom: 8px;
+        }
+
+        .job-title {
+            font-weight: bold;
+            font-size: 14px;
+            color: #2C3E50;
+        }
+
+        .job-company {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .job-location {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .job-dates {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .job-description {
+            font-style: italic;
+            margin-bottom: 12px;
+            font-size: 12px;
+        }
+
+        .job-bullets {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .job-bullets li {
+            position: relative;
+            margin-bottom: 6px;
+            font-size: 11px;
+            line-height: 1.3;
+        }
+
+        .job-bullets li::before {
+            content: "•";
+            position: absolute;
+            left: -15px;
+            color: #000;
+        }
+
+        .right-section {
+            margin-bottom: 25px;
+        }
+
+        .right-section h3 {
+            color: #2C3E50;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .right-section p, .right-section li {
+            font-size: 11px;
+            line-height: 1.3;
+            margin-bottom: 4px;
+        }
+
+        .right-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .right-section li {
+            margin-bottom: 3px;
+        }
+
+        .education-item {
+            margin-bottom: 8px;
+        }
+
+        .school-name {
+            font-weight: bold;
+        }
+
+        .degree {
+            font-style: italic;
+        }
+
+        .gpa {
+            color: #666;
+        }
+
+        .patent {
+            margin-bottom: 4px;
+        }
+
+        .patent-number {
+            font-weight: bold;
+        }
+
+        .skills {
+            font-size: 10px;
+            line-height: 1.4;
+        }
+
+        @media print {
+            body {
+                font-size: 10px;
+            }
+            .header {
+                padding: 20px 30px;
+            }
+            .main-content {
+                padding: 20px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <h1>Jon Fasoli</h1>
+            <h2>Chief Product Officer, Intuit Mailchimp</h2>
+        </div>
+        <div class="header-right">
+            <div class="contact-item">(415) 218-8623</div>
+            <div class="contact-item">jdfasoli@gmail.com</div>
+            <div class="contact-item">Linkedin.com/in/jonfasoli</div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="left-column">
+            <div class="section-title">Experience</div>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">CHIEF PRODUCT OFFICER</div>
+                    <div class="job-company">Intuit Mailchimp, Atlanta, GA</div>
+                </div>
+                <div class="job-dates">2021-Present</div>
+                <div class="job-description">Worldwide product and design leader for mid-market, small business and developer products.</div>
+                <ul class="job-bullets">
+                    <li>Led the integration of Intuit's largest acquisition - $12B and 1,500 people.</li>
+                    <li>Turned around a negative growth trajectory and delivered 18% revenue CAGR by immediately pivoting product strategy to increase ARPC and reduce churn.</li>
+                    <li>Transformed an underperforming, 300-person organization by eliminating roles with low/no customer outcomes, and rebuilding with top talent.</li>
+                    <li>Led a comprehensive re-platform for AI-transformation while delivering revenue-generating AI capabilities to customers in along the way. One of the first consumers of Open AI's private API (pre-ChatGPT).</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">VP & SMB BUSINESS SEGMENT LEADER</div>
+                    <div class="job-company">Intuit, Bay Area, CA</div>
+                </div>
+                <div class="job-dates">Jun 2019 - Oct 2021</div>
+                <div class="job-description">Cross-functional team leader for the portfolio of products within the QuickBooks Online (QBO) and QuickBooks Mobile (QBM) ecosystems.</div>
+                <ul class="job-bullets">
+                    <li>Grew QuickBooks Online revenue from $1.6B to $2.8B (33% CAGR), and customers from 3.6M to 5.3M (21% CAGR).</li>
+                    <li>Led the complete redesign of the customer experience; braiding growth hacking with a highly personalized experience each core customer segment.</li>
+                    <li>Drove step-function improvements in data & AI capabilities: 85% Accounting automation, 50% increase in data availability performance, new experimentation platform and methodologies.</li>
+                    <li>Connected thousands of small businesses with PPP loans, private funding, tax tools and insights to help them survive the COVID-19 pandemic and recession.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">DIRECTOR, PRODUCT MGMT.: SMB & SELF-EMPLOYED</div>
+                    <div class="job-company">Intuit, Bay Area, CA</div>
+                </div>
+                <div class="job-dates">Jun 2018 - Jun 2019</div>
+                <div class="job-description">Worldwide product leader for QBO, QuickBooks Self-Employed and Mobile portfolio.</div>
+                <ul class="job-bullets">
+                    <li>Reorganized a team of 50 around customer benefits vs. features. Recruited trajectory-changing leaders. Employee engagement +33% within 6 months.</li>
+                    <li>Created and implemented a framework for prioritization and focus across large numbers of teams ('The Build Method'). Over 1,500 people completed training.</li>
+                    <li>Drove +47% NPS improvement (65) and +14% new customer conversion.</li>
+                    <li>Developed machine learning capabilities that replaced >25% of manual accounting workflows with automation.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">DIRECTOR, PRODUCT MGMT.: SELF-EMPLOYED GROUP</div>
+                    <div class="job-company">Intuit, Bay Area</div>
+                </div>
+                <div class="job-dates">Nov 2014 - Jun 2018</div>
+                <div class="job-description">Worldwide product leader for a new business line serving self-employed customers.</div>
+                <ul class="job-bullets">
+                    <li>Grew a new product and business from 500 to 1 million monthly paying customers in under 4 years.</li>
+                    <li>Delivered product innovation that saved customers over $4000 per year, including patented mobile technologies (ex: auto-mileage tracking and receipt OCR), and patented AI and ML models (ex: Generated SE tax filing in under 60 seconds, using just a bank account connection - and the QB AI chatbot).</li>
+                    <li>Built an org from scratch and developed a new way of working within Intuit. Established norms that later became cultural pillars for the rest of the company.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">GROUP PRODUCT MANAGER: PAYMENTS</div>
+                    <div class="job-company">Intuit, Bay Area</div>
+                </div>
+                <div class="job-dates">Dec 2012 - Nov 2014</div>
+                <div class="job-description">Worldwide product leader for the Intuit Payments Platform and Developer Business.</div>
+                <ul class="job-bullets">
+                    <li>Platform still in operation, largely unchanged, processing over $125 billion annually for SMBs.</li>
+                    <li>Shipped master merchant architecture with Chase (US), multi-gateway, multi-currency platform, supporting suite of hardware and payment marks.</li>
+                    <li>Reduced merchant underwriting from 30 days to 30 seconds, by implementing new risk and underwriting infrastructure.</li>
+                    <li>Designed and launched new payment API and 3rd-party developer experience.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">SENIOR PRODUCT MANAGER: INTERNATIONAL PAYMENTS</div>
+                    <div class="job-company">Intuit, Bay Area</div>
+                </div>
+                <div class="job-dates">May 2011 - Dec 2012</div>
+                <div class="job-description">Product leader for Intuit's launch and growth of payments in international markets.</div>
+                <ul class="job-bullets">
+                    <li>Secured funding, architected and built a 'plug-and-play' global payment platform and offerings.</li>
+                    <li>Launched world's first mobile app with bluetooth chip & PIN payment acceptance.</li>
+                    <li>Led end-to-end product of bluetooth EMV hardware: industrial design, user testing, firmware, processor and acquirer accreditation, software integration, packaging, supply chain.</li>
+                    <li>Built and integrated full suite of automation tools that streamlined business operations across internal and external teams.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">ROTATIONAL TECHNOLOGY LEADERSHIP PROGRAM</div>
+                    <div class="job-company">Intuit, Various Locations</div>
+                </div>
+                <div class="job-dates">May 2009 - May 2011</div>
+                <div class="job-description">Rotational program across PM, Design, Engineering and Strategy roles.</div>
+                <ul class="job-bullets">
+                    <li>Launched Intuit's first iOS app that quickly rose to top 3 business app in iOS App Store.</li>
+                    <li>Led a cross-functional team to rewrite Intuit's core infra to support mobile devices (and its rapid growth).</li>
+                    <li>Launched iOS mobile payment hardware and GTM partnership with Apple retail.</li>
+                    <li>Designed and implemented an instant onboarding capability for SMB merchants (from 4 wk manual process).</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">INTERNSHIPS</div>
+                </div>
+                <ul class="job-bullets">
+                    <li>General Electric // Data Analyst</li>
+                    <li>Secretary of State's MN Office // Front-end & Graphic Design</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="right-section">
+                <h3>Objective</h3>
+                <p>Democratize the power of AI for small businesses.</p>
+            </div>
+
+            <div class="right-section">
+                <h3>Education</h3>
+                <div class="education-item">
+                    <div class="school-name">University of Wisconsin - Madison</div>
+                    <div class="degree">BBA Finance, Math Concentration</div>
+                    <div class="gpa">GPA 3.9/4.0</div>
+                </div>
+                <div class="education-item">
+                    <div class="school-name">Universitat Pompeu Fabra - ESCI</div>
+                    <div>Barcelona, Spain</div>
+                    <div class="degree">International Commerce, Design</div>
+                    <div class="gpa">GPA 9.7/10</div>
+                </div>
+            </div>
+
+            <div class="right-section">
+                <h3>Recognition</h3>
+                <ul>
+                    <li><strong>40 UNDER 40</strong><br>Silicon Valley Business Journal</li>
+                    <li><strong>FORWARD AWARD WINNER</strong><br>University of Wisconsin</li>
+                    <li><strong>8 TO WATCH UNDER 40</strong><br>University of Wisconsin</li>
+                    <li><strong>MEYERHOFF EXCELLENCE AWARD FOR LEADERSHIP</strong></li>
+                    <li><strong>GE STAR SCHOLAR</strong></li>
+                    <li><strong>ROBERT A. JERRED SCHOLAR</strong></li>
+                </ul>
+            </div>
+
+            <div class="right-section">
+                <h3>Volunteering</h3>
+                <ul>
+                    <li><strong>SPARK FOCUS</strong><br>Support for children with learning differences - Designer & Developer</li>
+                    <li><strong>SILVER LAKE ASSOCIATION</strong><br>Nature Preserve - Designer</li>
+                    <li><strong>LEADERSHIP @ LAMBEAU</strong><br>Leadership development for students - Facilitator & Sponsor</li>
+                </ul>
+            </div>
+
+            <div class="right-section">
+                <h3>Patents Held</h3>
+                <div class="patent">
+                    <span class="patent-number">#10,467,604:</span> ATM transaction with mobile device.
+                </div>
+                <div class="patent">
+                    <span class="patent-number">#8,655,773:</span> Geo-location based underwriting.
+                </div>
+                <div class="patent">
+                    <span class="patent-number">#9,129,276:</span> Inventory Management
+                </div>
+                <div class="patent">
+                    <span class="patent-number">#10,140,800:</span> Remote configuration of EMV terminals.
+                </div>
+                <div class="patent">
+                    <span class="patent-number">#9,129,278:</span> Pre-allocating merchant ID with processor entity.
+                </div>
+                <div class="patent">
+                    <span class="patent-number">#11,829,975:</span> Modeling categorization of transactions at point of sale.
+                </div>
+                <div class="patent">
+                    <span class="patent-number">#10,467,829:</span> Leveraging wireless connections for automated mileage tracking.
+                </div>
+                <div class="patent">
+                    <span class="patent-number">#8,757,484:</span> Reducing PIN fraud in point of sale transactions.
+                </div>
+                <div class="patent">
+                    <span class="patent-number">#8,429,068:</span> Data aggregation and modeling for transactional banking partnerships.
+                </div>
+                <div class="patent">
+                    <strong>PATENTS PENDING</strong> by request
+                </div>
+            </div>
+
+            <div class="right-section">
+                <h3>Skills</h3>
+                <div class="skills">
+                    Leadership - Coaching - Goal Setting - Performance management - Artificial Intelligence (AI) - Machine Learning - Advanced experimentation tools & insight methodologies - Statistics - Data Acumen and Analysis - Agile - Mobile Development - Product Management - Corporate Strategy and Development - Design Figma - Sketch - Photoshop - Python - VS Code - XCode - Hugging Face - Github - Github CoPilot - R - GCP - AWS - Segment.io - Amplitude - FullStory - Tableau - Looker (GDS) - Open AI APIs and Chat GPT - Google Suite & Gemini - Microsoft suite & CoPilot - Perplexity.ai
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
