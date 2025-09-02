@@ -22,14 +22,14 @@
         .header {
             background: linear-gradient(135deg, #005a8b 0%, #005a8b 25%, #1a1a1a 50%, #000000 100%);
             color: white;
-            padding: 19px 40px;
+            padding: 0px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .header-bg-animation {
@@ -257,11 +257,30 @@
             border-radius: 0 2px 2px 0;
         }
 
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 21.094px;
+        }
+
+        .profile-image {
+            flex-shrink: 0;
+        }
+
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            margin: 0px 0;
+            z-index: 1001;
+            position: relative;
+        }
+
         .header-left h1 {
-            font-size: 54.6px;
+            font-size: 57.586px;
             font-weight: bold;
             font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            margin-bottom: 8px;
+            margin-bottom: 8.438px;
             margin-left: 0;
             padding-left: 0;
         }
@@ -274,12 +293,12 @@
 
         .header-right {
             text-align: left;
-            font-size: 15.2px;
+            font-size: 16.031px;
             margin-left: 0;
         }
 
         .contact-item {
-            margin-bottom: 8px;
+            margin-bottom: 8.438px;
             display: flex;
             align-items: center;
             justify-content: flex-start;
@@ -293,7 +312,7 @@
 
         .main-content {
             display: flex;
-            padding: 40px 40px 0 40px;
+            padding: 30px 40px 0 40px;
             gap: 40px;
             border-radius: 20px 40px 0 0;
             background: white;
@@ -455,9 +474,12 @@
     <div class="header">
                         <div class="header-bg-animation" id="headerBgAnimation"></div>
                 <div class="progress-bar" id="progressBar"></div>
-        <div class="header-left">
-            <h1 class="name-text" id="nameText"><a href="https://chillestmonkey.com" target="_blank" style="color: white; text-decoration: none;">Jon Fasoli</a></h1>
-        </div>
+                    <div class="header-left">
+                <div class="profile-image">
+                    <img src="profile.jpg" alt="Jon Fasoli" class="profile-pic">
+                </div>
+                <h1 class="name-text" id="nameText"><a href="https://chillestmonkey.com" target="_blank" style="color: white; text-decoration: none;">Jon Fasoli</a></h1>
+            </div>
         <div class="header-right">
             <div class="contact-item">(415) 218-8623</div>
             <div class="contact-item">jdfasoli@gmail.com</div>
