@@ -12,56 +12,291 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.4;
             color: #000;
             background: #fff;
-            font-size: 12px;
+            font-size: 18.2px;
         }
 
         .header {
-            background: #2C3E50;
+            background: linear-gradient(135deg, #005a8b 0%, #005a8b 25%, #1a1a1a 50%, #000000 100%);
             color: white;
-            padding: 30px 40px;
+            padding: 19px 40px;
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .header-bg-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .header-bg-animation.active {
+            opacity: 1;
+        }
+
+        .exploring-firework {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            animation: explore 4s ease-out infinite;
+        }
+
+        .exploring-firework-large {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            animation: exploreLarge 5s ease-out infinite;
+        }
+
+        .exploring-firework-trail {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            animation: exploreTrail 3s ease-out infinite;
+        }
+
+        .firework-core {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: white;
+            animation: launch 2s ease-out forwards;
+            z-index: 10;
+        }
+
+        .firework-explosion {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            animation: explodeParticles 3s ease-out forwards;
+            z-index: 10;
+        }
+
+        .firework-particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            animation: particleTrail 2.5s ease-out forwards;
+            z-index: 10;
+        }
+
+        .firework-sparkle {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            border-radius: 50%;
+            background: white;
+            animation: sparkle 1.5s ease-out infinite;
+            z-index: 10;
+        }
+
+        @keyframes explore {
+            0% {
+                transform: scale(0) translateX(0) translateY(0);
+                opacity: 0;
+            }
+            20% {
+                transform: scale(1) translateX(0) translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2) translateX(20px) translateY(-15px);
+                opacity: 0.8;
+            }
+            80% {
+                transform: scale(0.8) translateX(40px) translateY(-30px);
+                opacity: 0.6;
+            }
+            100% {
+                transform: scale(0) translateX(60px) translateY(-45px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes exploreLarge {
+            0% {
+                transform: scale(0) translateX(0) translateY(0);
+                opacity: 0;
+            }
+            25% {
+                transform: scale(1.5) translateX(0) translateY(0);
+                opacity: 1;
+            }
+            60% {
+                transform: scale(1.8) translateX(30px) translateY(-20px);
+                opacity: 0.9;
+            }
+            100% {
+                transform: scale(0) translateX(80px) translateY(-60px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes exploreTrail {
+            0% {
+                transform: scale(0) translateX(0) translateY(0);
+                opacity: 0;
+            }
+            30% {
+                transform: scale(1) translateX(10px) translateY(-8px);
+                opacity: 0.7;
+            }
+            70% {
+                transform: scale(0.6) translateX(25px) translateY(-20px);
+                opacity: 0.4;
+            }
+            100% {
+                transform: scale(0) translateX(40px) translateY(-35px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes launch {
+            0% {
+                transform: translateY(100vh) scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(50vh) scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes explodeParticles {
+            0% {
+                transform: scale(0) translateX(0) translateY(0);
+                opacity: 1;
+            }
+            20% {
+                transform: scale(1) translateX(0) translateY(0);
+                opacity: 1;
+            }
+            60% {
+                transform: scale(2) translateX(40px) translateY(-30px);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(0) translateX(80px) translateY(-60px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes particleTrail {
+            0% {
+                transform: scale(1) translateX(0) translateY(0);
+                opacity: 1;
+            }
+            30% {
+                transform: scale(0.8) translateX(20px) translateY(-15px);
+                opacity: 0.9;
+            }
+            70% {
+                transform: scale(0.5) translateX(50px) translateY(-40px);
+                opacity: 0.6;
+            }
+            100% {
+                transform: scale(0) translateX(80px) translateY(-70px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+
+
+        .name-text {
+            transition: all 0.5s ease;
+        }
+
+        .name-text.celebrate {
+            transform: scale(1.1);
+            text-shadow: 0 0 20px rgba(255,255,255,0.8);
+            padding-left: 40px;
+            margin-left: 0;
+        }
+
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4ecdc4, #45b7d1, #96ceb4);
+            width: 0%;
+            transition: width 0.1s ease;
+            border-radius: 0 2px 2px 0;
         }
 
         .header-left h1 {
-            font-size: 36px;
+            font-size: 54.6px;
             font-weight: bold;
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             margin-bottom: 8px;
+            margin-left: 0;
+            padding-left: 0;
         }
 
         .header-left h2 {
-            font-size: 18px;
+            font-size: 22.8px;
             font-weight: normal;
-            margin-left: 20px;
+            margin-left: 0;
         }
 
         .header-right {
-            text-align: right;
-            font-size: 14px;
+            text-align: left;
+            font-size: 15.2px;
+            margin-left: 0;
         }
 
         .contact-item {
             margin-bottom: 8px;
             display: flex;
             align-items: center;
-            justify-content: flex-end;
+            justify-content: flex-start;
         }
 
         .contact-item::before {
-            content: "•";
-            margin-right: 8px;
+            content: "";
+            margin-right: 0;
             font-size: 16px;
         }
 
         .main-content {
             display: flex;
-            padding: 40px;
+            padding: 40px 40px 0 40px;
             gap: 40px;
+            border-radius: 20px 40px 0 0;
+            background: white;
         }
 
         .left-column {
@@ -70,15 +305,20 @@
 
         .right-column {
             flex: 1;
+            background: #000000;
+            color: white;
+            padding: 40px 20px 20px 20px;
+            margin-right: -40px;
+            margin-top: -40px;
         }
 
         .section-title {
-            color: #2C3E50;
-            font-size: 18px;
+            color: #000000;
+            font-size: 22.8px;
             font-weight: bold;
             text-transform: uppercase;
             margin-bottom: 20px;
-            border-bottom: 2px solid #2C3E50;
+            border-bottom: 2px solid #000000;
             padding-bottom: 5px;
         }
 
@@ -92,13 +332,13 @@
 
         .job-title {
             font-weight: bold;
-            font-size: 14px;
-            color: #2C3E50;
+            font-size: 19.3px;
+            color: #000000;
         }
 
         .job-company {
             font-weight: bold;
-            font-size: 14px;
+            font-size: 15.2px;
         }
 
         .job-location {
@@ -107,7 +347,7 @@
         }
 
         .job-dates {
-            font-size: 12px;
+            font-size: 15.2px;
             color: #666;
             margin-bottom: 8px;
         }
@@ -115,7 +355,7 @@
         .job-description {
             font-style: italic;
             margin-bottom: 12px;
-            font-size: 12px;
+            font-size: 15.2px;
         }
 
         .job-bullets {
@@ -126,7 +366,7 @@
         .job-bullets li {
             position: relative;
             margin-bottom: 6px;
-            font-size: 11px;
+            font-size: 15.2px;
             line-height: 1.3;
         }
 
@@ -142,17 +382,18 @@
         }
 
         .right-section h3 {
-            color: #2C3E50;
-            font-size: 14px;
+            color: white;
+            font-size: 22.8px;
             font-weight: bold;
             text-transform: uppercase;
             margin-bottom: 8px;
         }
 
         .right-section p, .right-section li {
-            font-size: 11px;
+            font-size: 15.2px;
             line-height: 1.3;
             margin-bottom: 4px;
+            color: white;
         }
 
         .right-section ul {
@@ -161,7 +402,7 @@
         }
 
         .right-section li {
-            margin-bottom: 3px;
+            margin-bottom: 8px;
         }
 
         .education-item {
@@ -170,10 +411,12 @@
 
         .school-name {
             font-weight: bold;
+            color: white;
         }
 
         .degree {
             font-style: italic;
+            font-size: 15.2px;
         }
 
         .gpa {
@@ -186,11 +429,13 @@
 
         .patent-number {
             font-weight: bold;
+            color: white;
         }
 
         .skills {
-            font-size: 10px;
+            font-size: 13.8px;
             line-height: 1.4;
+            color: white;
         }
 
         @media print {
@@ -208,14 +453,15 @@
 </head>
 <body>
     <div class="header">
+                        <div class="header-bg-animation" id="headerBgAnimation"></div>
+                <div class="progress-bar" id="progressBar"></div>
         <div class="header-left">
-            <h1>Jon Fasoli</h1>
-            <h2>Chief Product Officer, Intuit Mailchimp</h2>
+            <h1 class="name-text" id="nameText"><a href="https://chillestmonkey.com" target="_blank" style="color: white; text-decoration: none;">Jon Fasoli</a></h1>
         </div>
         <div class="header-right">
             <div class="contact-item">(415) 218-8623</div>
             <div class="contact-item">jdfasoli@gmail.com</div>
-            <div class="contact-item">Linkedin.com/in/jonfasoli</div>
+            <div class="contact-item"><a href="https://linkedin.com/in/jonfasoli" target="_blank" style="color: white; text-decoration: none;">Linkedin.com/in/jonfasoli</a></div>
         </div>
     </div>
 
@@ -225,10 +471,25 @@
             
             <div class="job">
                 <div class="job-header">
+                    <div class="job-title">VP SMALL BUSINESS PRODUCTS</div>
+                    <div class="job-company">PayPal, Atlanta, GA</div>
+                </div>
+                <div class="job-dates">2024-Present</div>
+                <div class="job-description">Product leader for PayPal's small business and agentic products. Led teams that:</div>
+                <ul class="job-bullets">
+                    <li>Redesigned the entirety of PayPal's Small Business web and mobile experiences.</li>
+                    <li>Launched PayPal's first new payment rail in over a decade, enabling outbound payments across 200 countries and 25 currencies.</li>
+                    <li>Introduced PayPal's first subscription pricing capability and offering.</li>
+                    <li>Developed PayPal's first agentic commerce products and invoicing MCP server.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
                     <div class="job-title">CHIEF PRODUCT OFFICER</div>
                     <div class="job-company">Intuit Mailchimp, Atlanta, GA</div>
                 </div>
-                <div class="job-dates">2021-Present</div>
+                <div class="job-dates">2021-2024</div>
                 <div class="job-description">Worldwide product and design leader for mid-market, small business and developer products.</div>
                 <ul class="job-bullets">
                     <li>Led the integration of Intuit's largest acquisition - $12B and 1,500 people.</li>
@@ -314,7 +575,7 @@
 
             <div class="job">
                 <div class="job-header">
-                    <div class="job-title">ROTATIONAL TECHNOLOGY LEADERSHIP PROGRAM</div>
+                    <div class="job-title">TECHNOLOGY LEADERSHIP PROGRAM</div>
                     <div class="job-company">Intuit, Various Locations</div>
                 </div>
                 <div class="job-dates">May 2009 - May 2011</div>
@@ -341,7 +602,7 @@
         <div class="right-column">
             <div class="right-section">
                 <h3>Objective</h3>
-                <p>Democratize the power of AI for small businesses.</p>
+                <p>Democratize AI for Small Businesses</p>
             </div>
 
             <div class="right-section">
@@ -383,31 +644,31 @@
             <div class="right-section">
                 <h3>Patents Held</h3>
                 <div class="patent">
-                    <span class="patent-number">#10,467,604:</span> ATM transaction with mobile device.
+                    <span class="patent-number"><a href="https://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PALL&p=1&u=%2Fnetahtml%2FPTO%2Fsrchnum.htm&r=1&f=G&l=50&co1=AND&d=PTXT&s1=10467604" target="_blank" style="color: white; text-decoration: none;">#10,467,604:</a></span> ATM transaction with mobile device.
                 </div>
                 <div class="patent">
-                    <span class="patent-number">#8,655,773:</span> Geo-location based underwriting.
+                    <span class="patent-number"><a href="https://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PALL&p=1&u=%2Fnetahtml%2FPTO%2Fsrchnum.htm&r=1&f=G&l=50&co1=AND&d=PTXT&s1=8655773" target="_blank" style="color: white; text-decoration: none;">#8,655,773:</a></span> Geo-location based underwriting.
                 </div>
                 <div class="patent">
-                    <span class="patent-number">#9,129,276:</span> Inventory Management
+                    <span class="patent-number"><a href="https://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PALL&p=1&u=%2Fnetahtml%2FPTO%2Fsrchnum.htm&r=1&f=G&l=50&co1=AND&d=PTXT&s1=9129276" target="_blank" style="color: white; text-decoration: none;">#9,129,276:</a></span> Inventory Management
                 </div>
                 <div class="patent">
-                    <span class="patent-number">#10,140,800:</span> Remote configuration of EMV terminals.
+                    <span class="patent-number"><a href="https://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PALL&p=1&u=%2Fnetahtml%2FPTO%2Fsrchnum.htm&r=1&f=G&l=50&co1=AND&d=PTXT&s1=10140800" target="_blank" style="color: white; text-decoration: none;">#10,140,800:</a></span> Remote configuration of EMV terminals.
                 </div>
                 <div class="patent">
-                    <span class="patent-number">#9,129,278:</span> Pre-allocating merchant ID with processor entity.
+                    <span class="patent-number"><a href="https://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PALL&p=1&u=%2Fnetahtml%2FPTO%2Fsrchnum.htm&r=1&f=G&l=50&co1=AND&d=PTXT&s1=9129278" target="_blank" style="color: white; text-decoration: none;">#9,129,278:</a></span> Pre-allocating merchant ID with processor entity.
                 </div>
                 <div class="patent">
-                    <span class="patent-number">#11,829,975:</span> Modeling categorization of transactions at point of sale.
+                    <span class="patent-number"><a href="https://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PALL&p=1&u=%2Fnetahtml%2FPTO%2Fsrchnum.htm&r=1&f=G&l=50&co1=AND&d=PTXT&s1=11829975" target="_blank" style="color: white; text-decoration: none;">#11,829,975:</a></span> Modeling categorization of transactions at point of sale.
                 </div>
                 <div class="patent">
-                    <span class="patent-number">#10,467,829:</span> Leveraging wireless connections for automated mileage tracking.
+                    <span class="patent-number"><a href="https://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PALL&p=1&u=%2Fnetahtml%2FPTO%2Fsrchnum.htm&r=1&f=G&l=50&co1=AND&d=PTXT&s1=10467829" target="_blank" style="color: white; text-decoration: none;">#10,467,829:</a></span> Leveraging wireless connections for automated mileage tracking.
                 </div>
                 <div class="patent">
-                    <span class="patent-number">#8,757,484:</span> Reducing PIN fraud in point of sale transactions.
+                    <span class="patent-number"><a href="https://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PALL&p=1&u=%2Fnetahtml%2FPTO%2Fsrchnum.htm&r=1&f=G&l=50&co1=AND&d=PTXT&s1=8757484" target="_blank" style="color: white; text-decoration: none;">#8,757,484:</a></span> Reducing PIN fraud in point of sale transactions.
                 </div>
                 <div class="patent">
-                    <span class="patent-number">#8,429,068:</span> Data aggregation and modeling for transactional banking partnerships.
+                    <span class="patent-number"><a href="https://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PALL&p=1&u=%2Fnetahtml%2FPTO%2Fsrchnum.htm&r=1&f=G&l=50&co1=AND&d=PTXT&s1=8429068" target="_blank" style="color: white; text-decoration: none;">#8,429,068:</a></span> Data aggregation and modeling for transactional banking partnerships.
                 </div>
                 <div class="patent">
                     <strong>PATENTS PENDING</strong> by request
@@ -417,10 +678,202 @@
             <div class="right-section">
                 <h3>Skills</h3>
                 <div class="skills">
-                    Leadership - Coaching - Goal Setting - Performance management - Artificial Intelligence (AI) - Machine Learning - Advanced experimentation tools & insight methodologies - Statistics - Data Acumen and Analysis - Agile - Mobile Development - Product Management - Corporate Strategy and Development - Design Figma - Sketch - Photoshop - Python - VS Code - XCode - Hugging Face - Github - Github CoPilot - R - GCP - AWS - Segment.io - Amplitude - FullStory - Tableau - Looker (GDS) - Open AI APIs and Chat GPT - Google Suite & Gemini - Microsoft suite & CoPilot - Perplexity.ai
+                    Leadership - Coaching - Goal Setting - Performance management - Artificial Intelligence (AI) - Prompt engineering - Cursor - Loveable - Replit - Factor - n8n - MCP - A2A - Machine Learning - Advanced experimentation tools & insight methodologies - Statistics - Data Acumen and Analysis - Agile - Mobile Development - Product Management - Corporate Strategy and Development - Design Figma - Sketch - Photoshop - Python - VS Code - XCode - Hugging Face - Github - Github CoPilot - R - GCP - AWS - Segment.io - Amplitude - FullStory - Tableau - Looker (GDS) - Open AI APIs and Chat GPT - Google Suite & Gemini - Microsoft suite & CoPilot - Perplexity.ai
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        let isAtBottom = false;
+        
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            
+            // Update progress bar
+            const scrollProgress = (scrollTop / (documentHeight - windowHeight)) * 100;
+            const progressBar = document.getElementById('progressBar');
+            progressBar.style.width = Math.min(scrollProgress, 100) + '%';
+            
+            // Check if user has scrolled to bottom (within 100px)
+            if (scrollTop + windowHeight >= documentHeight - 100) {
+                if (!isAtBottom) {
+                    celebrateAtBottom();
+                    isAtBottom = true;
+                }
+            } else {
+                if (isAtBottom) {
+                    returnToDefault();
+                    isAtBottom = false;
+                }
+            }
+        });
+        
+                function celebrateAtBottom() {
+            const nameText = document.getElementById('nameText');
+            const headerBg = document.getElementById('headerBgAnimation');
+
+            nameText.textContent = 'Thanks for your time';
+            nameText.classList.add('celebrate');
+            headerBg.classList.add('active');
+            createExplodingFireworks();
+        }
+        
+        function returnToDefault() {
+            const nameText = document.getElementById('nameText');
+            const headerBg = document.getElementById('headerBgAnimation');
+            
+            nameText.textContent = 'Jon Fasoli';
+            headerBg.classList.remove('celebrate');
+            headerBg.classList.remove('active');
+            
+            // Clear all fireworks
+            const fireworks = headerBg.querySelectorAll('.exploring-firework, .exploring-firework-large, .exploring-firework-trail, .firework-core, .firework-explosion, .firework-particle, .firework-sparkle');
+            fireworks.forEach(el => el.remove());
+        }
+
+        function createSpaceElements() {
+            const headerBg = document.getElementById('headerBgAnimation');
+            
+            // Create exploring fireworks
+            for (let i = 0; i < 25; i++) {
+                setTimeout(() => {
+                    const fireworkTypes = ['exploring-firework', 'exploring-firework-large', 'exploring-firework-trail'];
+                    const randomType = fireworkTypes[Math.floor(Math.random() * fireworkTypes.length)];
+                    
+                    const firework = document.createElement('div');
+                    firework.className = randomType;
+                    firework.style.left = Math.random() * 100 + '%';
+                    firework.style.top = Math.random() * 80 + 10 + '%';
+                    firework.style.background = `hsl(${Math.random() * 360}, 80%, 65%)`;
+                    firework.style.animationDelay = Math.random() * 2 + 's';
+                    
+                    headerBg.appendChild(firework);
+                    
+                    // Remove firework after animation
+                    const animationDuration = randomType === 'exploring-firework-large' ? 5000 : 
+                                           randomType === 'exploring-firework-trail' ? 3000 : 4000;
+                    
+                    setTimeout(() => {
+                        if (firework.parentNode) {
+                            firework.remove();
+                        }
+                    }, animationDuration);
+                }, i * 150);
+            }
+            
+            // Create a second wave for continuous exploration
+            setTimeout(() => {
+                for (let i = 0; i < 15; i++) {
+                    setTimeout(() => {
+                        const firework = document.createElement('div');
+                        firework.className = 'exploring-firework-trail';
+                        firework.style.left = Math.random() * 100 + '%';
+                        firework.style.top = Math.random() * 80 + 10 + '%';
+                        firework.style.background = `hsl(${Math.random() * 360}, 90%, 70%)`;
+                        firework.style.animationDelay = Math.random() * 1 + 's';
+                        
+                        headerBg.appendChild(firework);
+                        
+                        setTimeout(() => {
+                            if (firework.parentNode) {
+                                firework.remove();
+                            }
+                        }, 3000);
+                    }, i * 100);
+                }
+            }, 2000);
+        }
+
+        function createExplodingFireworks() {
+            const headerBg = document.getElementById('headerBgAnimation');
+            
+            // Create realistic fireworks with launch, explosion, and particle phases
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    createFirework(headerBg, i);
+                }, i * 200);
+            }
+            
+            // Create a second wave for continuous fireworks
+            setTimeout(() => {
+                for (let i = 0; i < 15; i++) {
+                    setTimeout(() => {
+                        createFirework(headerBg, i + 20);
+                    }, i * 150);
+                }
+            }, 3000);
+        }
+
+        function createFirework(container, index) {
+            // Launch phase - firework shoots up from bottom
+            const core = document.createElement('div');
+            core.className = 'firework-core';
+            core.style.left = (Math.random() * 80 + 10) + '%';
+            core.style.background = `hsl(${Math.random() * 360}, 90%, 70%)`;
+            container.appendChild(core);
+            
+            // After launch, create explosion
+            setTimeout(() => {
+                const explosionX = parseFloat(core.style.left);
+                const explosionY = 20 + Math.random() * 60; // Explode in upper portion
+                
+                // Create main explosion
+                const explosion = document.createElement('div');
+                explosion.className = 'firework-explosion';
+                explosion.style.left = explosionX + '%';
+                explosion.style.top = explosionY + '%';
+                explosion.style.background = `hsl(${Math.random() * 360}, 95%, 75%)`;
+                container.appendChild(explosion);
+                
+                // Create particle trails
+                for (let j = 0; j < 8; j++) {
+                    setTimeout(() => {
+                        const particle = document.createElement('div');
+                        particle.className = 'firework-particle';
+                        particle.style.left = explosionX + '%';
+                        particle.style.top = explosionY + '%';
+                        particle.style.background = `hsl(${Math.random() * 360}, 90%, 70%)`;
+                        particle.style.animationDelay = Math.random() * 0.5 + 's';
+                        container.appendChild(particle);
+                        
+                        // Remove particle after animation
+                        setTimeout(() => {
+                            if (particle.parentNode) {
+                                particle.remove();
+                            }
+                        }, 2500);
+                    }, j * 100);
+                }
+                
+                // Create sparkles
+                for (let k = 0; k < 12; k++) {
+                    setTimeout(() => {
+                        const sparkle = document.createElement('div');
+                        sparkle.className = 'firework-sparkle';
+                        sparkle.style.left = (explosionX + (Math.random() - 0.5) * 20) + '%';
+                        sparkle.style.top = (explosionY + (Math.random() - 0.5) * 20) + '%';
+                        container.appendChild(sparkle);
+                        
+                        // Remove sparkle after animation
+                        setTimeout(() => {
+                            if (sparkle.parentNode) {
+                                sparkle.remove();
+                            }
+                        }, 1500);
+                    }, k * 80);
+                }
+                
+                // Remove core and explosion
+                setTimeout(() => {
+                    if (core.parentNode) core.remove();
+                    if (explosion.parentNode) explosion.remove();
+                }, 3000);
+                
+            }, 2000); // Wait for launch to complete
+        }
+    </script>
 </body>
 </html>
